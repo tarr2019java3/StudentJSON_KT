@@ -14,6 +14,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        JSONUtil util = new JSONUtil();
+
         Student student = new Student("Jan",
                 "Kowalski",
                 32);
@@ -87,6 +89,11 @@ public class Main {
         } catch (IOException e){
             e.printStackTrace();
         }
+
+        util.writeList("Student's List", studentList);
+
+        util.readList("Student's list");
+
 
 	// write your code here
     }
