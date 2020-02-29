@@ -1,4 +1,4 @@
-package pl.sda.student;
+package student;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,15 +24,12 @@ public class JSONUtil {
     public void readList(String filename) {
         try {
 
-            File file = new File(filename);
 
-            Student value[] = mapper.readValue(file, Student[].class);
+
+            Student[] students = mapper.readValue(new File(filename), Student[].class);
             {
-                for (int i = 0; i < value.length; i++) {
-                    System.out.println(value[i].getName());
-                    System.out.println(value[i].getLastname());
-                    System.out.println(value[i].getIndex());
-                    System.out.println();
+                for (Student student: students){
+                    System.out.println(student.getName() + " " + student.getLastname() + " " + student.getIndex());
                 }
             }
         } catch (IOException e) {
