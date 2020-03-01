@@ -1,4 +1,4 @@
-package student;
+package pl.sda.student;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
